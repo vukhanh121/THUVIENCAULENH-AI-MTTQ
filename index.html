@@ -75,3 +75,366 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}
 body{min-width:320px;overflow-x:hidden}
 button,input,select,textarea{font:inherit}
 button{touch-action:manipulation}
+:where(button,input,select,textarea,a):focus-visible{outline:3px solid #d78b33;outline-offset:3px}
+.wrap{width:min(100%,1480px);max-width:1480px;margin-inline:auto;padding-inline:clamp(16px,2.6vw,36px)}
+.topin{gap:clamp(10px,2vw,22px)}
+.brand{min-width:0}.brand>div:last-child{min-width:0}.brand strong{display:block;line-height:1.25}
+.hero .wrap{position:relative;z-index:1}.hero h1{max-width:850px}
+.main{padding-bottom:28px}
+.workspace{grid-template-columns:clamp(260px,22.5vw,315px) minmax(0,1fr);align-items:start;gap:clamp(16px,2vw,28px)}
+.sidebar{min-width:0;max-height:calc(100dvh - 98px)}
+.content,.grid,.prompt{min-width:0}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,20px)}
+.prompt{height:100%}.prompt h3,.prompt p{overflow-wrap:anywhere}
+.cat{width:100%;cursor:pointer}
+.tools{align-items:stretch}.search{min-width:0}.tools .btn{min-height:46px}.tools select{min-height:46px}
+.overlay{padding:clamp(10px,2vw,24px)}
+.dialog{max-height:min(92dvh,950px);width:min(850px,100%)}
+.admin-dialog{width:min(1010px,100%)}
+.dialogbody{min-height:0;overscroll-behavior:contain}
+.dialogfoot{flex-shrink:0}
+.preview{overflow-wrap:anywhere;white-space:pre-wrap}
+.admin-form-grid input,.admin-form-grid select,.admin-form-grid textarea{min-width:0}
+@media (min-width:1500px){
+  .hero{padding:38px 0 40px}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .prompt{min-height:220px}
+}
+@media (min-width:901px) and (max-width:1150px){
+  .workspace{grid-template-columns:250px minmax(0,1fr);gap:15px}
+  .sidebar{padding:14px 9px}
+  .cat{padding:10px 7px}
+  .tools{gap:8px}
+  .grid{gap:11px}
+}
+@media (max-width:900px){
+  .wrap{padding-inline:clamp(14px,3.5vw,28px)}
+  .workspace{display:flex;flex-direction:column;gap:14px;margin-top:17px}
+  .sidebar{width:100%;max-height:none;overflow:visible;position:static;padding:14px}
+  .sidebar-heading{padding-bottom:10px;margin-bottom:10px}
+  .sidebar-note{display:none}
+  .category-toggle{min-height:52px;gap:7px;text-align:left}
+  .categories{max-height:min(42dvh,360px);overscroll-behavior:contain}
+  .cat{min-height:52px}
+  .content{width:100%}
+  .topin{min-height:65px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+  #library{scroll-margin-top:76px}
+}
+@media (max-width:680px){
+  .topin{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding-block:9px}
+  .topin .brand{grid-column:1;grid-row:1}.brand strong{font-size:13px}.brand small{font-size:11px}
+  .emblem{flex:0 0 38px;width:38px;height:38px}
+  .topin .admin-nav{grid-column:2;grid-row:1;min-height:44px;padding:9px 11px;font-size:12px;white-space:nowrap}
+  .topin #exploreBtn{display:none}
+  .hero{padding:22px 0 24px}.hero h1{font-size:clamp(26px,6.4vw,34px);line-height:1.17}
+  .hero p{font-size:14px}.hero-cta{min-height:47px;width:100%;max-width:260px}
+  .hero-tags{gap:6px}.hero-tags > span{font-size:11px}
+  .notice{padding:12px 13px;line-height:1.55}
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .stat{padding:10px 7px;border-radius:12px;text-align:center}.stat b{font-size:21px}.stat span{font-size:11px;line-height:1.35}
+  .tools{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px}
+  .tools .search{grid-column:1/-1;width:100%;min-height:48px;font-size:16px}
+  .tools select,.tools #favorites{width:100%;min-height:46px;font-size:13px}
+  .sectionhead{align-items:start;gap:7px;flex-wrap:wrap}.sectionhead h2{font-size:20px}
+  .grid{grid-template-columns:1fr;gap:12px}
+  .prompt{padding:17px;min-height:0}.prompt h3{font-size:16px}.prompt p{font-size:14px}
+  .prompt .actions{margin-top:auto}.prompt .actions .primary{min-height:48px}
+  .pages{gap:8px;margin:20px 0}.pages button{min-height:44px;padding-inline:14px}
+  .categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .cat{padding:10px 8px;min-height:56px}.cat-label{font-size:12px}
+  .overlay{align-items:flex-end;padding:0}
+  .dialog,.admin-dialog{width:100%;max-height:96dvh;border-radius:18px 18px 0 0}
+  .dialoghead{padding:13px 16px}.dialoghead h2{font-size:18px;line-height:1.4}
+  .dialogbody{padding:15px 16px;overflow-y:auto}
+  .dialogfoot{padding:12px 16px max(12px,env(safe-area-inset-bottom));gap:9px}
+  .dialogfoot .primary{min-height:52px;flex:1;font-size:14px}
+  .dialogfoot .secondary{min-height:48px}
+  .tabs{display:grid;grid-template-columns:1fr 1fr}.tabs button{min-height:46px;font-size:13px}
+  .form{grid-template-columns:1fr}
+  .admin-toolbar{align-items:stretch}.admin-toolbar input{min-width:0;width:100%}
+  #loginForm{display:flex;flex-wrap:wrap;gap:10px}#loginForm .fieldlabel{flex:1 1 100%}#loginForm .primary{width:100%;min-height:48px}
+  .admin-form-grid{grid-template-columns:1fr;gap:10px}
+  .admin-form-actions{flex-wrap:wrap;gap:8px}.admin-form-actions .btn{min-height:48px}
+}
+@media (max-width:380px){
+  .wrap{padding-inline:12px}.brand strong{font-size:12px}.brand small{font-size:10px}
+  .topin .admin-nav{padding:9px;font-size:11px}
+  .hero h1{font-size:25px}.hero-tags{align-items:flex-start}
+  .categories{grid-template-columns:1fr}
+  .cat{min-height:48px}
+  .stats{gap:5px}.stat b{font-size:19px}.stat span{font-size:10px}
+  .dialogfoot .btn{padding-inline:10px}
+}
+.hero-tags > span{display:inline-flex;align-items:center;gap:4px;max-width:100%;white-space:normal;line-height:1.4}
+.hero-tags > span > span{display:inline;border:0;background:none;border-radius:0;padding:0;margin:0;font:inherit;color:inherit;white-space:inherit}
+@media(max-width:600px){.hero-tags{display:flex;flex-wrap:wrap;gap:8px}.hero-tags > span{font-size:12px;padding:7px 10px}}
+</style></head><body><header class="top"><div class="wrap topin"><div class="brand"><div aria-hidden="true" class="emblem">✦</div><div><strong>THƯ VIỆN CÂU LỆNH AI</strong><small>Hỗ trợ công tác Mặt trận ở cơ sở</small></div></div><a href="#library" id="exploreBtn">Khám phá thư viện ↓</a><button class="admin-nav" id="adminOpen">⚙ Quản trị</button></div></header><section class="hero"><div class="wrap"><div class="eyebrow">Công cụ hỗ trợ cán bộ Mặt trận • Phiên bản 5.0</div><h1><span id="heroCount">Thư viện câu lệnh AI</span>.<br/>Ứng dụng AI hiệu quả hơn.</h1><p>Tra cứu theo nghiệp vụ, tùy chỉnh theo công việc thực tế và sao chép câu lệnh để sử dụng với công cụ AI phù hợp.</p><button class="hero-cta" id="heroExplore">Khám phá ngay ↓</button><div class="hero-tags"><span>✓ <span id="heroGroups">Các nhóm nghiệp vụ</span></span><span>✓ Không cần API</span><span>✓ Dễ dùng trên điện thoại</span></div></div></section><main class="wrap main"><div class="notice"><strong>🔒 Lưu ý an toàn:</strong> Không nhập tài liệu mật, thông tin nội bộ chưa công bố hoặc dữ liệu cá nhân nhạy cảm vào AI. Luôn kiểm tra nội dung và số liệu trước khi sử dụng chính thức.</div><section aria-label="Thống kê thư viện" class="stats"><div class="stat"><b id="count">—</b><span>Câu lệnh đang có</span></div><div class="stat"><b id="groups">—</b><span>Nhóm nghiệp vụ</span></div><div class="stat"><b id="favCount">0</b><span>Câu lệnh yêu thích</span></div></section><div class="workspace" id="library" tabindex="-1"><aside class="sidebar"><div class="sidebar-heading"><span class="sidebar-heading-icon" aria-hidden="true">▦</span><div><h2>Danh mục nghiệp vụ</h2><p>Chọn lĩnh vực cần tra cứu</p></div></div><button type="button" class="category-toggle" id="categoryToggle" aria-controls="categories" aria-expanded="false">☷ Chọn nhóm nghiệp vụ <span id="categoryToggleLabel">Tất cả nghiệp vụ</span><span aria-hidden="true">⌄</span></button><nav aria-label="Lọc nhóm nghiệp vụ" class="categories" id="categories"></nav><div class="sidebar-note">💡 Chọn một nhóm để lọc nhanh câu lệnh phù hợp.</div></aside><section class="content"><div class="tools"><input aria-label="Tìm kiếm câu lệnh" class="search" id="search" placeholder="🔎 Tìm báo cáo, kế hoạch, tuyên truyền..." type="search"/><select aria-label="Sắp xếp" id="sort"><option value="order">Thứ tự tài liệu</option><option value="name">Tên A–Z</option><option value="featured">Nổi bật trước</option></select><button class="btn secondary" id="favorites">☆ Yêu thích</button></div><div class="sectionhead"><h2>Khám phá câu lệnh</h2><span id="result">Đang tải...</span></div><div aria-live="polite" class="grid" id="grid"><div class="empty">Đang kết nối thư viện từ Google Sheets...</div></div><div class="pages"><button class="btn secondary" id="prev">← Trước</button><span id="pageText"></span><button class="btn secondary" id="next">Sau →</button></div></section></div></main><footer class="footer"><div class="wrap"><strong>© 2026 Vũ Duy Khánh</strong> · Ủy ban MTTQ Việt Nam tỉnh An Giang<br/>Thư viện hỗ trợ xây dựng câu lệnh AI; người sử dụng chịu trách nhiệm kiểm tra và phê duyệt kết quả.</div></footer><div aria-labelledby="dialogTitle" aria-modal="true" class="overlay" id="overlay" role="dialog"><div class="dialog"><div class="dialoghead"><div><small id="dialogGroup"></small><h2 id="dialogTitle"></h2></div><button aria-label="Đóng" class="close" id="close">×</button></div><div class="dialogbody"><div class="tabs"><button class="active" id="tabOriginal">Câu lệnh gốc</button><button id="tabCustom">Tùy chỉnh nội dung</button></div><p class="hint" id="guide"></p><div hidden="" id="customFields"><div class="form"><label>Đơn vị<input id="unit" placeholder="Ủy ban MTTQ Việt Nam xã..."/></label><label>Thời gian<input id="time" placeholder="Tháng/năm..."/></label><label class="wide">Nội dung, thông tin thực tế<textarea id="context" placeholder="Nhập bối cảnh và số liệu đã kiểm chứng..."></textarea></label><label class="wide">Yêu cầu bổ sung<textarea id="requirements" placeholder="Định dạng, độ dài, mục tiêu..."></textarea></label></div></div><div class="preview" id="preview"></div></div><div class="dialogfoot"><button class="btn secondary" id="reset">Nhập lại</button><button class="btn primary" id="copy">📋 Sao chép câu lệnh</button></div></div></div><div class="toast" id="toast" role="status"></div><div aria-labelledby="adminTitle" aria-modal="true" class="overlay" id="adminOverlay" role="dialog"><div class="dialog admin-dialog"><div class="dialoghead"><div><small>QUẢN LÝ NỘI DUNG</small><h2 id="adminTitle">Quản trị thư viện</h2></div><button aria-label="Đóng" class="close" id="adminClose">×</button></div><div class="dialogbody"><div id="loginView"><p class="hint">Chỉ người được cấp mật khẩu mới có thể thêm, sửa hoặc ẩn câu lệnh. Dữ liệu lưu trực tiếp vào Google Sheets.</p><form id="loginForm"><label class="fieldlabel">Mật khẩu quản trị<input autocomplete="current-password" id="adminPassword" placeholder="Nhập mật khẩu quản trị" required="" type="password"/></label><button class="btn primary" type="submit">Đăng nhập</button></form><p class="admin-error" id="loginError" role="alert"></p></div><div hidden="" id="adminView"><div class="admin-toolbar"><span id="adminStats">Đang tải...</span><div><button class="btn secondary" id="adminRefresh">↻ Làm mới</button> <button class="btn secondary" id="adminLogout">Đăng xuất</button></div></div><div class="admin-toolbar"><input aria-label="Tìm câu lệnh quản trị" id="adminSearch" placeholder="Tìm câu lệnh để chỉnh sửa..." type="search"/><button class="btn primary" id="adminNew">＋ Thêm câu lệnh</button></div><div class="admin-list" id="adminList"></div><form hidden="" id="adminForm"><h3 id="adminFormTitle">Thêm câu lệnh mới</h3><input id="editId" type="hidden"/><div class="admin-form-grid"><label>Tên câu lệnh *<input id="editName" maxlength="250" required=""/></label><label>Nhóm nghiệp vụ *<select id="editGroup" required=""></select></label><label>Biểu tượng<input id="editIcon" maxlength="8" placeholder="📝"/></label><label>Thứ tự<input id="editOrder" max="999999" min="1" type="number" value="999"/></label><label class="full">Mô tả ngắn<textarea id="editDescription" rows="2"></textarea></label><label class="full">Nội dung câu lệnh *<textarea id="editPrompt" required="" rows="8"></textarea></label><label class="full">Hướng dẫn sử dụng<textarea id="editGuide" rows="2"></textarea></label><label class="full">Tài liệu cần có<input id="editFile"/></label><label class="full">Từ khóa<input id="editKeywords"/></label><label>Trạng thái<select id="editStatus"><option value="BẬT">Hiển thị</option><option value="ẨN">Ẩn</option></select></label><label class="checkline"><input id="editFeatured" type="checkbox"/> Nổi bật</label></div><div class="admin-form-actions"><button class="btn secondary" id="adminCancel" type="button">Hủy</button><button class="btn primary" id="adminSave" type="submit">Lưu câu lệnh</button></div></form></div></div></div></div>
+
+<script>
+'use strict';
+
+// URL Google Apps Script Web App của bạn
+const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyD0d3ihkUzftrK8BssHYakIBpoHGBVE9rGuT_IFp7lnzGoadzBpeK6F1eAhPKvChZ-LA/exec";
+
+let all=[],category='',onlyFav=false,page=1,selected=null,mode='original';
+const limit=12,$=id=>document.getElementById(id);
+let fav=new Set();try{fav=new Set(JSON.parse(localStorage.getItem('mttq_favorites')||'[]'))}catch(e){}
+const clean=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').toLowerCase();
+
+function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2300)}
+
+function filtered(){
+  const q=clean($('search').value);
+  let a=all.filter(x=>(!category||x.nhom===category)&&(!onlyFav||fav.has(x.id))&&clean([x.ten,x.nhom,x.moTa,x.tuKhoa,x.prompt].join(' ')).includes(q));
+  const sort=$('sort').value;
+  if(sort==='name')a.sort((x,y)=>x.ten.localeCompare(y.ten,'vi'));
+  if(sort==='featured')a.sort((x,y)=>Number(y.noiBat)-Number(x.noiBat)||x.thuTu-y.thuTu);
+  return a;
+}
+
+const CATEGORY_STYLE={
+ 'Báo cáo định kỳ & chuyên đề':['📊','Báo cáo định kỳ'],
+ 'Văn bản hành chính':['📄','Văn bản hành chính'],
+ 'Báo cáo & số liệu':['📈','Báo cáo & số liệu'],
+ 'Tuyên truyền & vận động Nhân dân':['📣','Tuyên truyền, vận động'],
+ 'Tổng hợp tình hình & kiến nghị':['🗂️','Tổng hợp & kiến nghị'],
+ 'Kiểm tra & xử lý tài liệu':['🔎','Kiểm tra tài liệu'],
+ 'Nghiệp vụ Mặt trận':['🤝','Nghiệp vụ Mặt trận'],
+ 'Chuyển đổi số & AI':['💻','Chuyển đổi số & AI'],
+ 'Hội nghị, phát biểu & sự kiện':['🎤','Hội nghị & sự kiện'],
+ 'Truyền thông & nội dung số':['📱','Truyền thông số'],
+ 'Kế hoạch & tổ chức hoạt động':['📅','Kế hoạch & hoạt động'],
+ 'Giám sát, phản biện & góp ý':['⚖️','Giám sát & phản biện'],
+ 'An sinh xã hội & phong trào thi đua':['❤️','An sinh & thi đua'],
+ 'Dân tộc, tôn giáo & địa bàn biên giới':['🌿','Dân tộc, tôn giáo'],
+ 'Chuyển đổi số & ứng dụng AI':['💻','Chuyển đổi số & AI'],
+ 'Bài phát biểu & diễn văn':['🎙️','Phát biểu & diễn văn'],
+ 'Tuyên truyền & truyền thông':['📣','Tuyên truyền & truyền thông']
+};
+
+function renderCats(){
+ const counts=new Map();all.forEach(x=>counts.set(x.nhom,(counts.get(x.nhom)||0)+1));
+ const cats=[...counts.keys()].sort((a,b)=>{
+  const canonical=typeof CATEGORIES_V4!=='undefined'?CATEGORIES_V4:[];
+  const ai=canonical.indexOf(a),bi=canonical.indexOf(b);
+  if(ai>=0&&bi>=0)return ai-bi;
+  if(ai>=0)return -1;if(bi>=0)return 1;
+  return a.localeCompare(b,'vi');
+ });
+ const nav=$('categories');nav.replaceChildren();
+ [['','Tất cả nghiệp vụ'],...cats.map(c=>[c,c])].forEach(([key,label])=>{
+  const count=key?counts.get(key):all.length;
+  const style=key?(CATEGORY_STYLE[key]||['📁',key]):['▦','Tất cả nghiệp vụ'];
+  const b=el('button','cat'+(category===key?' active':''));
+  b.type='button';b.setAttribute('aria-pressed',String(category===key));
+  b.title=key||'Hiển thị tất cả câu lệnh';
+  b.append(el('span','cat-icon',style[0]));
+  const text=el('span','cat-label',style[1]);b.append(text);
+  b.append(el('span','cat-count',String(count)));
+  b.onclick=()=>{category=key;page=1;renderCats();render();
+   if(window.innerWidth<901){$('categories').classList.remove('expanded');$('categoryToggle').setAttribute('aria-expanded','false');$('categoryToggleLabel').textContent=style[1];$('result').scrollIntoView({behavior:'smooth',block:'center'});}
+  };
+  nav.append(b);
+ });
+ $('groups').textContent=cats.length;$('heroGroups').textContent=cats.length+' nhóm nghiệp vụ';
+}
+
+function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
+
+function render(){
+  const data=filtered(),pages=Math.max(1,Math.ceil(data.length/limit));
+  page=Math.min(page,pages);
+  $('result').textContent=data.length+' câu lệnh phù hợp';
+  $('count').textContent=all.length;
+  $('heroCount').textContent=all.length?all.length+' câu lệnh thực chiến':'Thư viện câu lệnh AI';
+  $('favCount').textContent=fav.size;
+  $('favorites').textContent=onlyFav?'★ Đang xem yêu thích':'☆ Yêu thích';
+  $('pageText').textContent=page+' / '+pages;
+  $('prev').disabled=page===1;$('next').disabled=page===pages;
+  const grid=$('grid');grid.replaceChildren();
+  if(!data.length){grid.append(el('div','empty','Không tìm thấy câu lệnh. Hãy thử từ khóa hoặc nhóm khác.'));return}
+  data.slice((page-1)*limit,page*limit).forEach(x=>{
+    const card=el('article','prompt');
+    const meta=el('div','meta');
+    meta.append(el('span','',x.icon+' '+x.nhom),el('span','',x.id));
+    card.append(meta,el('h3','',x.ten),el('p','',x.moTa));
+    const actions=el('div','actions'),open=el('button','btn primary','Sử dụng câu lệnh →'),f=el('button','fav'+(fav.has(x.id)?' on':''),fav.has(x.id)?'★':'☆');
+    open.onclick=()=>openDialog(x);
+    f.title='Lưu câu lệnh yêu thích';f.setAttribute('aria-label','Đánh dấu yêu thích');
+    f.onclick=()=>{fav.has(x.id)?fav.delete(x.id):fav.add(x.id);try{localStorage.setItem('mttq_favorites',JSON.stringify([...fav]))}catch(e){}render()};
+    actions.append(open,f);card.append(actions);grid.append(card)
+  });
+}
+
+function openDialog(x){
+  selected=x;mode='original';$('dialogTitle').textContent=x.ten;$('dialogGroup').textContent=x.nhom;$('guide').textContent=x.huongDan||'Thay thông tin mẫu bằng dữ liệu thực tế đã kiểm chứng.';['unit','time','context','requirements'].forEach(id=>$(id).value='');setMode('original');$('overlay').classList.add('open');document.body.style.overflow='hidden';$('close').focus()
+}
+
+function setMode(m){mode=m;$('tabOriginal').classList.toggle('active',m==='original');$('tabCustom').classList.toggle('active',m==='custom');$('customFields').hidden=m!=='custom';$('reset').hidden=m!=='custom';preview()}
+
+function preview(){
+  if(!selected)return;let s=selected.prompt||'';
+  if(mode==='custom'){
+    const values=[['unit','Đơn vị'],['time','Thời gian'],['context','Thông tin thực tế'],['requirements','Yêu cầu bổ sung']].map(([id,label])=>({label,value:$(id).value.trim()})).filter(x=>x.value);
+    if(values.length)s+='\n\nTHÔNG TIN BỔ SUNG ĐÃ ĐƯỢC NGƯỜI DÙNG CUNG CẤP:\n'+values.map(x=>x.label+': '+x.value).join('\n')+'\nHãy ưu tiên các thông tin bổ sung khi hoàn thiện câu trả lời; không tự tạo dữ kiện.'
+  }
+  $('preview').textContent=s
+}
+
+function closeDialog(){$('overlay').classList.remove('open');document.body.style.overflow=''}
+
+async function copyText(s){
+  try{
+    if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(s);
+    else{const t=el('textarea');t.value=s;document.body.append(t);t.select();if(!document.execCommand('copy'))throw Error('copy');t.remove()}
+    toast('✓ Đã sao chép câu lệnh');
+  }catch(e){toast('Không sao chép tự động được. Hãy chọn và sao chép nội dung trong ô xem trước.')}
+}
+
+$('search').oninput=()=>{page=1;render()};
+$('sort').onchange=()=>{page=1;render()};
+$('favorites').onclick=()=>{onlyFav=!onlyFav;page=1;render()};
+$('prev').onclick=()=>{page--;render();$('library').scrollIntoView()};
+$('next').onclick=()=>{page++;render();$('library').scrollIntoView()};
+$('close').onclick=closeDialog;
+$('overlay').onclick=e=>{if(e.target===$('overlay'))closeDialog()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDialog()});
+$('tabOriginal').onclick=()=>setMode('original');$('tabCustom').onclick=()=>setMode('custom');
+['unit','time','context','requirements'].forEach(id=>$(id).oninput=preview);
+$('reset').onclick=()=>{['unit','time','context','requirements'].forEach(id=>$(id).value='');preview()};
+$('copy').onclick=()=>copyText($('preview').textContent);
+
+function loaded(data){all=Array.isArray(data)?data:[];renderCats();render()}
+function failed(e){$('grid').replaceChildren(el('div','empty','Không tải được dữ liệu: '+(e&&e.message?e.message:e)));$('result').textContent='Lỗi tải dữ liệu'}
+
+// Cơ chế tải dữ liệu JSONP
+function fetchJsonpPrompts(){
+  return new Promise((resolve,reject)=>{
+    const callbackName='__mttq_cb_'+Math.random().toString(36).slice(2,10)+Date.now().toString(36);
+    const script=document.createElement('script');
+    const timer=setTimeout(()=>{
+      cleanup();
+      reject(new Error('Hết thời gian kết nối Google Apps Script (Timeout).'));
+    },15000);
+
+    function cleanup(){
+      clearTimeout(timer);
+      delete window[callbackName];
+      if(script.parentNode) script.parentNode.removeChild(script);
+    }
+
+    window[callbackName]=(res)=>{
+      cleanup();
+      if(res&&res.ok) resolve(res.data);
+      else reject(new Error(res&&res.error?res.error:'Lỗi phản hồi API JSONP'));
+    };
+
+    script.src=GAS_WEBAPP_URL+'?api=public&callback='+callbackName;
+    script.onerror=()=>{cleanup();reject(new Error('Không thể kết nối đến máy chủ Apps Script.'));};
+    document.head.appendChild(script);
+  });
+}
+
+function initDataLoad(){
+  if(typeof google!=='undefined'&&google.script&&google.script.run){
+    google.script.run.withSuccessHandler(loaded).withFailureHandler(failed).getPrompts();
+  } else {
+    fetchJsonpPrompts().then(loaded).catch(failed);
+  }
+}
+initDataLoad();
+
+const jumpToLibrary=ev=>{if(ev)ev.preventDefault();const target=$('library');target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});};
+$('exploreBtn').addEventListener('click',jumpToLibrary);
+$('heroExplore').addEventListener('click',jumpToLibrary);
+$('categoryToggle').addEventListener('click',()=>{const nav=$('categories');const expanded=nav.classList.toggle('expanded');$('categoryToggle').setAttribute('aria-expanded',String(expanded));});
+
+$('adminOpen').onclick=()=>{ $('adminOverlay').classList.add('open');document.body.style.overflow='hidden';if(adminToken){showAdmin();}else{$('loginView').hidden=false;$('adminView').hidden=true;$('adminPassword').focus();}};
+$('adminClose').onclick=closeAdmin;
+$('adminOverlay').addEventListener('click',e=>{if(e.target===$('adminOverlay'))closeAdmin();});
+function closeAdmin(){$('adminOverlay').classList.remove('open');document.body.style.overflow='';}
+
+let adminToken='',adminItems=[];
+
+const gas=(name,...args)=>new Promise((resolve,reject)=>{
+  try{
+    if(typeof google!=='undefined'&&google.script&&google.script.run){
+      const runner=google.script.run.withSuccessHandler(resolve).withFailureHandler(reject);
+      switch(name){
+        case 'getPrompts': runner.getPrompts(); break;
+        case 'adminLogin': runner.adminLogin(args[0]); break;
+        case 'adminLogout': runner.adminLogout(args[0]); break;
+        case 'adminListPrompts': runner.adminListPrompts(args[0]); break;
+        case 'adminSavePrompt': runner.adminSavePrompt(args[0],args[1]); break;
+        case 'adminHidePrompt': runner.adminHidePrompt(args[0],args[1]); break;
+        default: reject(new Error('Chức năng không được hỗ trợ: '+name));
+      }
+      return;
+    }
+
+    const requestId='mttq_'+Math.random().toString(36).slice(2,12)+Date.now().toString(36);
+    const iframeName='ifr_'+requestId;
+    const iframe=document.createElement('iframe');
+    iframe.name=iframeName;
+    iframe.style.display='none';
+
+    const form=document.createElement('form');
+    form.action=GAS_WEBAPP_URL;
+    form.method='POST';
+    form.target=iframeName;
+    form.style.display='none';
+
+    const params={action:name,requestId:requestId};
+    if(name==='adminLogin') params.password=args[0];
+    else{
+      params.token=args[0];
+      if(name==='adminSavePrompt') params.payload=JSON.stringify(args[1]);
+      if(name==='adminHidePrompt') params.id=args[1];
+    }
+
+    for(const key in params){
+      const input=document.createElement('input');
+      input.type='hidden';input.name=key;input.value=params[key];
+      form.appendChild(input);
+    }
+
+    const timer=setTimeout(()=>{cleanup();reject(new Error('Hết thời gian chờ phản hồi quản trị.'));},25000);
+
+    function onMessage(e){
+      if(!e.data||e.data.type!=='MTTQ_API_V5'||e.data.requestId!==requestId) return;
+      cleanup();
+      if(e.data.ok) resolve(e.data.data);
+      else reject(new Error(e.data.error||'Thao tác thất bại'));
+    }
+
+    function cleanup(){
+      clearTimeout(timer);
+      window.removeEventListener('message',onMessage);
+      if(form.parentNode) form.parentNode.removeChild(form);
+      if(iframe.parentNode) iframe.parentNode.removeChild(iframe);
+    }
+
+    window.addEventListener('message',onMessage);
+    document.body.appendChild(iframe);
+    document.body.appendChild(form);
+    form.submit();
+  }catch(e){reject(e);}
+});
+
+function errText(e){return e&&e.message?e.message:String(e);}
+
+$('loginForm').onsubmit=async e=>{e.preventDefault();const button=$('loginForm').querySelector('button');button.disabled=true;$('loginError').textContent='';try{const r=await gas('adminLogin',$('adminPassword').value);adminToken=r.token;$('adminPassword').value='';await showAdmin();}catch(error){$('loginError').textContent=errText(error);}finally{button.disabled=false;}};
+async function showAdmin(){$('loginView').hidden=true;$('adminView').hidden=false;$('adminForm').hidden=true;await refreshAdmin();}
+async function refreshAdmin(){try{adminItems=await gas('adminListPrompts',adminToken);renderAdmin();}catch(e){$('adminList').textContent='Lỗi: '+errText(e);if(/hết hạn|không hợp lệ/.test(errText(e))){adminToken='';$('adminView').hidden=true;$('loginView').hidden=false;}}}
+function renderAdmin(){const q=clean($('adminSearch').value);const rows=adminItems.filter(x=>clean(x.ten+' '+x.nhom+' '+x.id).includes(q));$('adminStats').textContent=adminItems.length+' câu lệnh (kể cả đã ẩn)';const root=$('adminList');root.replaceChildren();if(!rows.length){root.append(el('div','empty','Không có câu lệnh phù hợp'));return;}rows.forEach(x=>{const item=el('div','admin-item');const info=el('div');info.append(el('strong','',x.ten),el('small','',x.id+' • '+x.nhom+' • '+(x.trangThai==='ẨN'?'Đang ẩn':'Đang hiển thị')));const actions=el('div');const edit=el('button','btn secondary','Sửa');edit.onclick=()=>openEditor(x);const hide=el('button','btn secondary',x.trangThai==='ẨN'?'Đã ẩn':'Ẩn');hide.disabled=x.trangThai==='ẨN';hide.onclick=async()=>{if(!confirm('Ẩn câu lệnh “'+x.ten+'” khỏi website? Dữ liệu vẫn được giữ trong Sheets.'))return;try{await gas('adminHidePrompt',adminToken,x.id);toast('Đã ẩn câu lệnh');await refreshAdmin();await reloadPublic();}catch(e){alert(errText(e));}};actions.append(edit,hide);item.append(info,actions);root.append(item);});}
+$('adminSearch').oninput=renderAdmin;$('adminRefresh').onclick=refreshAdmin;
+$('adminLogout').onclick=async()=>{try{await gas('adminLogout',adminToken);}catch(e){}adminToken='';adminItems=[];$('adminView').hidden=true;$('loginView').hidden=false;toast('Đã đăng xuất');};
+function openEditor(x){$('adminForm').hidden=false;$('adminFormTitle').textContent=x?'Chỉnh sửa câu lệnh':'Thêm câu lệnh mới';const mapping={editId:'id',editName:'ten',editGroup:'nhom',editIcon:'icon',editOrder:'thuTu',editDescription:'moTa',editPrompt:'prompt',editGuide:'huongDan',editFile:'fileCanCo',editKeywords:'tuKhoa',editStatus:'trangThai'};for(const [k,v] of Object.entries(mapping))$(k).value=x?String(x[v]??''):(k==='editOrder'?'999':k==='editStatus'?'BẬT':'');$('editFeatured').checked=!!(x&&x.noiBat);$('adminForm').scrollIntoView({behavior:'smooth',block:'start'});}
+$('adminNew').onclick=()=>openEditor(null);$('adminCancel').onclick=()=>$('adminForm').hidden=true;
+$('adminForm').onsubmit=async e=>{e.preventDefault();const p={id:$('editId').value,ten:$('editName').value,nhom:$('editGroup').value,icon:$('editIcon').value,thuTu:$('editOrder').value,moTa:$('editDescription').value,prompt:$('editPrompt').value,huongDan:$('editGuide').value,fileCanCo:$('editFile').value,tuKhoa:$('editKeywords').value,trangThai:$('editStatus').value,noiBat:$('editFeatured').checked};$('adminSave').disabled=true;try{await gas('adminSavePrompt',adminToken,p);toast('✓ Đã lưu câu lệnh');$('adminForm').hidden=true;await refreshAdmin();await reloadPublic();}catch(error){alert('Không lưu được: '+errText(error));}finally{$('adminSave').disabled=false;}};
+async function reloadPublic(){try{if(typeof google!=='undefined'&&google.script&&google.script.run){const records=await gas('getPrompts');loaded(records);}else{const records=await fetchJsonpPrompts();loaded(records);}}catch(e){toast('Không tải lại được thư viện: '+errText(e));}}
+const CATEGORIES_V4=["Báo cáo định kỳ & chuyên đề", "Tổng hợp tình hình & kiến nghị", "Kế hoạch & tổ chức hoạt động", "Hội nghị, phát biểu & sự kiện", "Tuyên truyền & vận động Nhân dân", "Truyền thông & nội dung số", "Giám sát, phản biện & góp ý", "An sinh xã hội & phong trào thi đua", "Dân tộc, tôn giáo & địa bàn biên giới", "Chuyển đổi số & ứng dụng AI"];
+$('editGroup').replaceChildren(...CATEGORIES_V4.map(label=>{const option=el('option','',label);option.value=label;return option;}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('adminOverlay').classList.contains('open'))closeAdmin();});
+</script></body></html>
